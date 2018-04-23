@@ -24,12 +24,12 @@
 set -e
 
 # Echo commands before executing them.
-#set -o verbose
+set -o verbose
 
 echo ">> Running ${BASH_SOURCE[0]}"
 
-sudo apt-get -qq update > /dev/null
-sudo apt-get -y -qq install clang lldb-3.8 libicu-dev libtool libcurl4-openssl-dev libbsd-dev build-essential libssl-dev uuid-dev tzdata libz-dev > /dev/null
+sudo apt-get -qq update
+sudo apt-get -y -qq install clang lldb-3.8 libicu-dev libtool libcurl4-openssl-dev libbsd-dev build-essential libssl-dev uuid-dev tzdata libz-dev
 
 # Environment vars
 version=`lsb_release -d | awk '{print tolower($2) $3}'`
